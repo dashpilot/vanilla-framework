@@ -1,11 +1,16 @@
 import Layout from "./layouts/layout.mjs";
-import data from "./content/data.mjs";
+// import data from "./content/data.mjs";
 import post from "./components/post.mjs";
 
 class Page {
   render(page) {
-    var mydata = data();
+
+    const response = await fetch("https://api.eu-central-1.linodeobjects.com/vanilla-framework/data.json");
+    var mydata = await response.json();
+
+    // var mydata = data();
     mydata.page = page;
+    
 
     var tpl = Layout.header();
     tpl += Layout.nav();
