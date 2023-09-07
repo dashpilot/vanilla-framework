@@ -29,7 +29,7 @@ class Layout {
   }
 
   body(data) {
-    return `<div class="container mt-5"><h1 class="mb-4">${data.page}</h1>`;
+    return `<div class="container mt-5"><h1 class="mb-4">${data.category}</h1>`;
   }
 
   footer() {

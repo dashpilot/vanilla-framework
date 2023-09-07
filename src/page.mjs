@@ -5,13 +5,13 @@ import post from "./components/post.mjs";
 class Page {
   render(page, mydata) {
     // var mydata = data();
-    mydata.page = page;
+    mydata.category = page;
 
     var tpl = Layout.header();
     tpl += Layout.nav();
     tpl += Layout.body(mydata);
-    mydata.items
-      .filter((x) => x.page == mydata.page)
+    mydata.posts
+      .filter((x) => x.category == mydata.category)
       .forEach((item) => {
         tpl += post(item);
       });
