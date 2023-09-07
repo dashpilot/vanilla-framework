@@ -13,7 +13,10 @@ export default async function (req) {
     page = searchParams.get("p");
   }
 
-  var data = Data();
+  const response = await fetch("/data.json");
+  var data = await response.json();
+
+  // var data = Data();
   data.page = page;
 
   var tpl = Layout.header();
