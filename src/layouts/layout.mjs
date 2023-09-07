@@ -43,7 +43,7 @@ class Layout {
 			let key = e.message ? "message" : "data";
 			let msg = JSON.parse(e[key]);
 	
-			if (msg.msg == "refresh") {
+			if (msg.msg == "saved") {
 			  var mydata = msg.data;
 			  console.log(mydata);
 	
