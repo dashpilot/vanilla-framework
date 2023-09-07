@@ -4,7 +4,7 @@ import Post from "./components/post.mjs";
 
 class Page {
   render(page) {
-    let data = Data();
+    var data = Data();
     data.page = page;
 
     var tpl = Layout.header();
