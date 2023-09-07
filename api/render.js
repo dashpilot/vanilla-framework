@@ -1,4 +1,6 @@
-import Page from "../src/index.mjs";
+import Layout from "../src/layouts/layout.mjs";
+import Data from "../src/content/data.mjs";
+import Post from "../src/components/post.mjs";
 
 export const config = {
   runtime: "edge",
@@ -11,9 +13,31 @@ export default async function (req) {
     page = searchParams.get("p");
   }
 
-  const html = Page.render(page);
+  var data = Data();
+  data.page = page;
 
-  return new Response(html, {
+  var tpl = Layout.header();
+  tpl += Layout.nav();
+  tpl += Layout.body(data);
+  data.items
+    .filter((x) => x.page == data.page)
+    .forEach((item) => {
+      tpl += Post(item);
+    });
+
+  if (typeof Layout.style === "function") {
+    tpl += `
+    <style>
+    ${Layout.style()}
+    </style>
+    `;
+  }
+
+  tpl += Layout.footer();
+
+  //const html = Page.render(page);
+
+  return new Response(tpl, {
     status: 200,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
