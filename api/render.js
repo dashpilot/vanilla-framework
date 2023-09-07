@@ -1,4 +1,4 @@
-import Page from "../src/Page.mjs";
+import Page from "../src/page.mjs";
 
 export const config = {
   runtime: "edge",
