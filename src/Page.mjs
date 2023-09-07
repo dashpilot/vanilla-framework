@@ -1,19 +1,19 @@
 import Layout from "./layouts/layout.mjs";
-import Data from "./content/data.mjs";
-import Post from "./components/post.mjs";
+import data from "./content/data.mjs";
+import post from "./components/post.mjs";
 
 class Page {
   render(page) {
-    var data = Data();
-    data.page = page;
+    var mydata = data();
+    mydata.page = page;
 
     var tpl = Layout.header();
     tpl += Layout.nav();
-    tpl += Layout.body(data);
-    data.items
-      .filter((x) => x.page == data.page)
+    tpl += Layout.body(mydata);
+    mydata.items
+      .filter((x) => x.page == mydata.page)
       .forEach((item) => {
-        tpl += Post(item);
+        tpl += post(item);
       });
 
     if (typeof Layout.style === "function") {

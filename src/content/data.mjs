@@ -1,4 +1,4 @@
-const Data = () => {
+const data = () => {
   return {
     items: [
       {
@@ -27,4 +27,4 @@ const Data = () => {
   };
 };
 
-export default Data;
+export default data;
