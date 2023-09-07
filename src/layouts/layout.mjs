@@ -51,9 +51,9 @@ class Layout {
 			  document.body.dispatchEvent(event);
 	
 			  console.log("Ok, reloading the data");
-			
-			  window.location.reload();
-			
+			  setTimeout(()=>{
+				window.location.reload();
+			  }, 100)
 			  
 			}
 			
