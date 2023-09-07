@@ -3,14 +3,14 @@ import Layout from "./layouts/layout.mjs";
 import post from "./components/post.mjs";
 
 class Page {
-  render(page) {
-
-    const response = await fetch("https://api.eu-central-1.linodeobjects.com/vanilla-framework/data.json");
+  async render(page) {
+    const response = await fetch(
+      "https://api.eu-central-1.linodeobjects.com/vanilla-framework/data.json"
+    );
     var mydata = await response.json();
 
     // var mydata = data();
     mydata.page = page;
-    
 
     var tpl = Layout.header();
     tpl += Layout.nav();
