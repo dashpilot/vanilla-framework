@@ -36,9 +36,29 @@ class Layout {
     return `</div>
 	<script src="https://blogbird.vercel.app/relay.js"></script>
 	<script>
-		function render(){
-			alert('ok')
-		}
+	if (window.self !== window.top) {
+		window.addEventListener(
+		  "message",
+		  (e) => {
+			let key = e.message ? "message" : "data";
+			let msg = JSON.parse(e[key]);
+	
+			if (msg.msg == "refresh") {
+			  var mydata = msg.data;
+			  console.log(mydata);
+	
+			  const event = new CustomEvent("update", { detail: mydata });
+			  document.body.dispatchEvent(event);
+	
+			  console.log("Ok, reloading the data");
+			  window.location.reload();
+			}
+			
+		  },
+		  false
+		);
+	  }
+	
 	</script>
 	</body></html>`;
   }
