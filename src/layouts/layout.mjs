@@ -33,7 +33,9 @@ class Layout {
   }
 
   footer() {
-    return `</div></body></html>`;
+    return `</div>
+	<script src="https://blogbird.vercel.app/relay.js"></script>
+	</body></html>`;
   }
 
   style() {
