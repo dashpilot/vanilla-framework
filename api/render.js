@@ -1,5 +1,5 @@
-import Layout from "../app/layouts/layout.mjs";
-import Post from "../app/components/post.mjs";
+import Layout from "../src/layouts/layout.mjs";
+import Post from "../src/components/post.mjs";
 
 export const config = {
   runtime: "edge",
