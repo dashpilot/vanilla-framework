@@ -21,8 +21,9 @@ class Layout {
   nav() {
     return `
 	  <nav>
-	  <a href="./render">Home</a>
-	  <a href="./render?p=about">About</a>
+	  <a href="./">Home</a>
+	  <a href="./about">About</a>
+	  <a href="./contact">Contact</a>
 	  </nav>
 	  `;
   }
@@ -40,6 +41,9 @@ class Layout {
 	  	nav{
 		  	padding: 10px 20px;
 	  	}
+		nav a{
+			padding-right: 10px;
+		}
 	  `;
   }
 }
