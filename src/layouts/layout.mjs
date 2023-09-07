@@ -40,12 +40,7 @@ class Layout {
     return `
 	  	nav{
 		  	padding: 10px 20px;
-	  	}
-		
-		nav a{
-			padding-right: 10px;
-		}
-	  `;
+	  	}`;
   }
 }
 
