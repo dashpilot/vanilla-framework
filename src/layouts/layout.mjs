@@ -35,6 +35,11 @@ class Layout {
   footer() {
     return `</div>
 	<script src="https://blogbird.vercel.app/relay.js"></script>
+	<script>
+		function render(){
+			alert('ok')
+		}
+	</script>
 	</body></html>`;
   }
 
