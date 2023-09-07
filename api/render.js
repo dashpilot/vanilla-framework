@@ -13,8 +13,12 @@ export default async function (req) {
     page = searchParams.get("p");
   }
 
-  const response = await fetch("/data.json");
+  const response = await fetch(
+    "https://vanilla-framework.vercel.app/data.json"
+  );
   var data = await response.json();
+
+  console.log(data);
 
   // var data = Data();
   data.page = page;
