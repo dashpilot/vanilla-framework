@@ -53,7 +53,7 @@ class Layout {
 			  console.log("Ok, reloading the data");
 			  setTimeout(()=>{
 				window.location.reload();
-			  }, 1000)
+			  }, 500)
 			  
 			}
 			
