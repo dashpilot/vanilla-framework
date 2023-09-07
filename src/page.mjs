@@ -3,12 +3,7 @@ import Layout from "./layouts/layout.mjs";
 import post from "./components/post.mjs";
 
 class Page {
-  async render(page) {
-    const response = await fetch(
-      "https://api.eu-central-1.linodeobjects.com/vanilla-framework/data.json"
-    );
-    var mydata = await response.json();
-
+  render(page, mydata) {
     // var mydata = data();
     mydata.page = page;
 

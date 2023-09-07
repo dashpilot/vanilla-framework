@@ -11,7 +11,12 @@ export default async function (req) {
     page = searchParams.get("p");
   }
 
-  const html = Page.render(page);
+  const response = await fetch(
+    "https://api.eu-central-1.linodeobjects.com/vanilla-framework/data.json"
+  );
+  var mydata = await response.json();
+
+  const html = Page.render(page, mydata);
 
   return new Response(html, {
     status: 200,
