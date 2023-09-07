@@ -1,5 +1,5 @@
 import Layout from "../app/layouts/layout.mjs";
-import Post from "../app/components/post.mjs";
+// import Post from "../app/components/post.mjs";
 
 export const config = {
   runtime: "edge",
@@ -25,11 +25,14 @@ export default async function (req) {
   var tpl = Layout.header();
   tpl += Layout.nav();
   tpl += Layout.body(data);
+
+  /*
   data.items
     .filter((x) => x.page == data.page)
     .forEach((item) => {
       tpl += Post(item);
     });
+    */
 
   if (typeof Layout.style === "function") {
     tpl += `
