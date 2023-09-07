@@ -1,6 +1,6 @@
-import Layout from "./layouts/layout.mjs";
-import Data from "./content/data.mjs";
-import Post from "./components/post.mjs";
+import Layout from "./layouts/Layout.mjs";
+import Data from "./content/Data.mjs";
+import Post from "./components/Post.mjs";
 
 class Page {
   render(page) {
