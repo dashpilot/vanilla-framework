@@ -13,7 +13,7 @@ export default async function (req) {
 
   const html = Page.render(page);
 
-  return new Response(tpl, {
+  return new Response(html, {
     status: 200,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
