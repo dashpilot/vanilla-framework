@@ -1,5 +1,4 @@
 import Layout from "../src/layouts/layout.mjs";
-import Data from "../src/content/data.mjs";
 import Post from "../src/components/post.mjs";
 
 export const config = {
